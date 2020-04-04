@@ -1,6 +1,7 @@
 {% extends 'base_layout.html' %}
 
 {% block content%}
+{% autoescape off %}
     <h1>Articles List</h1>
     <div class="articles">
     {% for article in articles %}
@@ -12,4 +13,5 @@
         </div>
     {% endfor %}
     </div>
+{% endautoescape %}
 {% endblock %}
