@@ -5,12 +5,18 @@ from django.contrib.auth.decorators import login_required
 from . import forms
 
 def article_list(request):
-    articles = Article.objects.all().order_by('date');
+    if "orderby" in request.GET:
+        orderby = request.GET['orderby']
+    else:
+        orderby = "date"
+    query = "SELECT * FROM articles_article ORDER BY " + orderby
+    articles = Article.objects.raw(query)
     return render(request, 'articles/article_list.html', { 'articles': articles })
 
 def article_detail(request, slug):
     # return HttpResponse(slug)
-    article = Article.objects.get(slug=slug)
+    query = "SELECT id FROM articles_article WHERE slug = '" + slug + "'"
+    article = Article.objects.raw(query)[0]
     return render(request, 'articles/article_detail.html', { 'article': article })
 
 @login_required(login_url="/accounts/login/")
