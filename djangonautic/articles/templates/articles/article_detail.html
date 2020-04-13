@@ -4,16 +4,16 @@
 <div class="article-detail">
     <div class="article">
         <img
-            src={{ article.thumb.url }}
-            class={{ article.imgSize }}
+            src="{{ article.thumb.url }}"
+            class="{{ article.imgSize }}"
 
         />
-        <h2 style=color:{{ article.title_color }};>
+        <h2 style="color:{{ article.title_color }};">
             {{ article.title }}
         </h2>
         <h3>
             Written by {{ article.author.username }}
-            <a href={{  article.author_homepage  }}>
+            <a href="{{  article.author_homepage  }}">
                 <button>Author Homepage</button>
             </a>
         </h3>
