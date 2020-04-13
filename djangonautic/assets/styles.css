@@ -149,3 +149,8 @@ a.highlight{
     border-radius: 4px;
     margin: 10px 0;
 }
+
+.smallIMG {
+    width: 200px;
+    border: 2px solid red;
+} 

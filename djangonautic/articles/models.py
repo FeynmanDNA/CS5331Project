@@ -9,6 +9,7 @@ class Article(models.Model):
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     thumb = models.ImageField(default='default.png', blank=True)
+    imgSize = models.CharField(default='smallIMG', max_length=200)
     author_homepage = models.CharField(default='#', max_length=200)
     author = models.ForeignKey(User, default=None)
 
