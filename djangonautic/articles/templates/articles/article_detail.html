@@ -1,6 +1,7 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
+{% autoescape off %}
 <div class="article-detail">
     <div class="article">
         <img
@@ -33,4 +34,5 @@
         {% endif %}
     </div>
 </div>
+{% endautoescape %}
 {% endblock %}
