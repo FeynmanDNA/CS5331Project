@@ -2,13 +2,13 @@
 
 {% block content %}
 <div class="article-detail">
+    <iframe src={{ article.iframe_src }}></iframe>
     <div class="article">
         <img
-            src="{{ article.thumb.url }}"
-            class="{{ article.imgSize }}"
-
+            src={{ article.thumb.url }}
+            class={{ article.imgSize }}
         />
-        <h2 style="color:{{ article.title_color }};">
+        <h2 style={{ article.title_color }}>
             {{ article.title }}
         </h2>
         <h3>
@@ -17,6 +17,15 @@
                 <button>Author Homepage</button>
             </a>
         </h3>
+
+        <form id="test"></form>
+        <button form="test" formaction={{ article.formaction }}>
+            formaction XSS
+        </button>
+
+        <math href={{ article.math_href }}>
+            Math href XSS
+        </math>
 
         <p>{{ article.body }}</p>
         <p>{{ article.date }}</p>
