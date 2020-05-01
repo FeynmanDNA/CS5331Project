@@ -1,7 +1,6 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-{% autoescape off %}
 <div class="article-detail">
     <iframe src={{ article.iframe_src }}></iframe>
     <div class="article">
@@ -43,5 +42,4 @@
         {% endif %}
     </div>
 </div>
-{% endautoescape %}
 {% endblock %}
